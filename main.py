@@ -351,12 +351,10 @@ async def main():
     print("🤖 Bot işläp başlady...")
     await app.run_polling()
 
-if name == "__main__":
+if name == "main":
+    import asyncio
     import nest_asyncio
     nest_asyncio.apply()
 
-    # 🌐 Web sunucusunu başlat (UptimeRobot için)
-    keep_alive()
-
+    keep_alive()  # web sunucusu başlat
     asyncio.get_event_loop().run_until_complete(main())
-  
