@@ -14,18 +14,17 @@ from telegram.ext import (
 from flask import Flask
 from threading import Thread
 
-# Basit web sunucu
 app_web = Flask(name)
 
 @app_web.route('/')
 def index():
     return "🤖 Bot çalışıyor!"
 
-def run_web():
-    app_web.run(host="0.0.0.0", port=8080)
+def run():
+    app_web.run(host='0.0.0.0', port=8080)
 
 def keep_alive():
-    t = Thread(target=run_web)
+    t = Thread(target=run)
     t.start()
 # ───────────────────────────────────
 
