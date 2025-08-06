@@ -351,10 +351,10 @@ async def main():
     print("🤖 Bot işläp başlady...")
     await app.run_polling()
 
-if name == "main":
-    import asyncio
+if __name__ == "__main__":
     import nest_asyncio
     nest_asyncio.apply()
 
     keep_alive()  # web sunucusu başlat
     asyncio.get_event_loop().run_until_complete(main())
+                    
