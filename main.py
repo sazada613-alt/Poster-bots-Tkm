@@ -10,6 +10,25 @@ from telegram.ext import (
     filters
 )
 
+# ── KEEP-ALIVE İÇİN GEREKLİ KISIM ──
+from flask import Flask
+from threading import Thread
+
+# Basit web sunucu
+app_web = Flask(name)
+
+@app_web.route('/')
+def index():
+    return "🤖 Bot çalışıyor!"
+
+def run_web():
+    app_web.run(host="0.0.0.0", port=8080)
+
+def keep_alive():
+    t = Thread(target=run_web)
+    t.start()
+# ───────────────────────────────────
+
 # 👤 ADMIN SAZLAMALARY
 ADMIN_ID = 7394635812
 RUGSAT_BERLEN_ULANYJYLAR = {ADMIN_ID}
@@ -333,10 +352,12 @@ async def main():
     print("🤖 Bot işläp başlady...")
     await app.run_polling()
 
-if __name__ == "__main__":
-    import asyncio
+if name == "main":
     import nest_asyncio
     nest_asyncio.apply()
+
+    # 🌐 Web sunucusunu başlat (UptimeRobot için)
+    keep_alive()
 
     asyncio.get_event_loop().run_until_complete(main())
   
