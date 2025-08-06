@@ -14,7 +14,7 @@ from telegram.ext import (
 from flask import Flask
 from threading import Thread
 
-app_web = Flask(name)
+app_web = Flask(__name__)
 
 @app_web.route('/')
 def index():
