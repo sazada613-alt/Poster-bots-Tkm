@@ -1,2 +1,1 @@
-python-telegram-bot==20.3
-nest_asyncio
+worker: python main.py
