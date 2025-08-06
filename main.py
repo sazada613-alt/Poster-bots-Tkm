@@ -351,7 +351,7 @@ async def main():
     print("🤖 Bot işläp başlady...")
     await app.run_polling()
 
-if name == "main":
+if name == "__main__":
     import nest_asyncio
     nest_asyncio.apply()
 
