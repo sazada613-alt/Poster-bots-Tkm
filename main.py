@@ -343,7 +343,7 @@ async def meýilleşdiriji(app):
 
 # ✅ Esasy funksiýa
 async def main():
-    app = ApplicationBuilder().token("7859933993:AAEM7_UfgU1h7j3lEtLCx_f_xRx8Zor1JeU").build()
+    app = ApplicationBuilder().token("7859933993:AAFW4gctDkBYNMnKTmmLR-X2E6il2YTb_yY").build()
     app.add_handler(CommandHandler("start", basla))
     app.add_handler(CallbackQueryHandler(duwme_handler))
     app.add_handler(MessageHandler(filters.TEXT | filters.PHOTO, habar_handler))
